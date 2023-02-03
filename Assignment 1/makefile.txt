@@ -1,0 +1,12 @@
+CC= g++
+diamond: driver.o diamond.o
+	g++ -o diamond driver.o diamond.o
+
+driver.o: driver.cpp diamond.h
+	g++ -c driver.cpp
+
+diamond.o: diamond.cpp diamond.h
+	g++ -c diamond.cpp
+
+clean:
+	rm *.o diamond
